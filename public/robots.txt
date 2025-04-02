@@ -1,0 +1,12 @@
+
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /admin/
+
+# Allow specific pages
+Allow: /
+Allow: /finance/
+Allow: /health/
+Allow: /math/
+Allow: /casino/
+Allow: /chance-games/

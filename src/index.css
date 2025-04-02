@@ -1,0 +1,288 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Special SEO Content handling */
+.seo-content {
+  display: block !important;
+  visibility: visible !important;
+  position: static !important;
+  z-index: 1 !important;
+}
+
+html.react-loaded .seo-content {
+  display: none !important;
+}
+
+/* Fix sidebar height issue */
+html, body, #root {
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Make sure sidebar content doesn't overflow */
+.sidebar-content-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 98% 64%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 342 100% 59%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Theme color variables */
+    --theme-primary: 146 66% 56%;      /* #4ad481 */
+    --theme-secondary: 149 100% 42%;   /* #00d957 */
+    --theme-accent: 144 48% 52%;       /* #46c379 */
+    --theme-dark: 208 36% 10%;         /* #0F1923 */
+    --theme-neutral: 211 23% 21%;      /* #2a3642 */
+    --theme-light: 0 0% 100%;          /* #FFFFFF */
+    --theme-hover: 206 22% 84%;        /* #cfdae5 */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 199 98% 64%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 342 100% 59%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Theme color variables (dark mode variants) */
+    --theme-primary: 146 66% 50%;      /* Darkened #4ad481 */
+    --theme-secondary: 149 100% 38%;   /* Darkened #00d957 */
+    --theme-accent: 144 48% 48%;       /* Darkened #46c379 */
+    --theme-dark: 208 36% 8%;          /* Darkened #0F1923 */
+    --theme-neutral: 211 23% 18%;      /* Darkened #2a3642 */
+    --theme-light: 0 0% 95%;           /* Slightly off-white */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  .glass-effect {
+    @apply bg-white bg-opacity-70 backdrop-blur-md border border-white border-opacity-20 shadow-glass;
+  }
+
+  .neo-effect {
+    @apply bg-white shadow-neo rounded-xl;
+  }
+
+  .animated-gradient {
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbars but keep functionality */
+  .scrollbar-hidden {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+/* Custom transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Calculator specific styles */
+.calc-input {
+  @apply bg-white rounded-lg border border-gray-200 p-3 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-200;
+}
+
+.calc-slider {
+  @apply appearance-none w-full h-2 bg-gray-200 rounded outline-none;
+}
+
+.calc-slider::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-theme-primary rounded-full cursor-pointer transition-all duration-200;
+}
+
+.calc-slider::-webkit-slider-thumb:hover {
+  @apply transform scale-110;
+}
+
+.calc-button {
+  @apply bg-theme-primary text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 hover:bg-opacity-90 hover:shadow-md active:transform active:scale-95;
+}
+
+.calc-tab {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.calc-tab-active {
+  @apply bg-theme-primary text-white;
+}
+
+.calc-tab-inactive {
+  @apply bg-gray-100 text-gray-600 hover:bg-theme-hover;
+}
+
+/* Sidenav animation */
+.sidenav-enter {
+  transform: translateX(-100%);
+}
+
+.sidenav-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+
+.sidenav-exit {
+  transform: translateX(0);
+}
+
+.sidenav-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms;
+}
+
+/* Animation for game/casino cards */
+.game-card {
+  @apply transition-all duration-300;
+}
+
+.game-card:hover {
+  @apply transform scale-105 shadow-lg;
+}

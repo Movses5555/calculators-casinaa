@@ -1,0 +1,69 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* CSS variable definitions */
+  :root {
+    --calculator-primary: 58 208 129;
+    --calculator-primary-dark: 48 180 108;
+    --calculator-primary-light: 129 227 176;
+  }
+}
+
+@layer components {
+  .fade-transition {
+    @apply transition-opacity duration-300 ease-in-out;
+  }
+  
+  .animate-fade-in {
+    @apply opacity-0 animate-in fade-in duration-500 fill-mode-forwards;
+  }
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-scale-in {
+    @apply opacity-0 animate-in zoom-in-95 duration-200 fill-mode-forwards;
+  }
+}
+
+/* Calculator specific styles */
+.calc-input {
+  @apply bg-white rounded-lg border border-gray-200 p-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+}
+
+.calc-label {
+  @apply block text-sm font-medium text-gray-700 mb-1.5;
+}
+
+.calc-section {
+  @apply p-6 bg-white rounded-lg border border-gray-100 shadow-sm mb-6;
+}
+
+.calc-card {
+  @apply bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.theme-primary-gradient {
+  background: linear-gradient(135deg, rgb(var(--calculator-primary-light)), rgb(var(--calculator-primary)));
+}
+
+.text-calculator-primary {
+  color: rgb(var(--calculator-primary));
+}
+
+.bg-calculator-primary {
+  background-color: rgb(var(--calculator-primary));
+}
+
+.border-calculator-primary {
+  border-color: rgb(var(--calculator-primary));
+}
