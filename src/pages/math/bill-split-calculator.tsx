@@ -1,18 +1,18 @@
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import BillSplitCalculator from '@/components/calculators/math/BillSplitCalculator';
 
 const BillSplitCalculatorPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Bill Split Calculator | Divide Expenses Fairly</title>
         <meta name="description" content="Split bills and expenses easily among friends, roommates, or groups. Calculate how much each person owes with our bill split calculator." />
         <meta name="keywords" content="bill splitter, expense sharing, split cost, roommate calculator, group expense" />
         <link rel="canonical" href="/math/bill-split-calculator" />
-      </Helmet>
+      </Head>
 
       <div className="container max-w-6xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

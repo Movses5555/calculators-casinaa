@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { Github, Twitter, Facebook, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-7 gap-8">
           {/* Brand section */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <img 
                 src="/lovable-uploads/d8aa8a83-a1f8-4057-a349-95f93706b281.png" 
                 alt="CalcMaster Logo" 
@@ -118,7 +118,7 @@ const Footer = () => {
                 <ul className="mt-4 space-y-2">
                   {category.links.map((link, idx) => (
                     <li key={idx}>
-                      <Link to={link.path} className="text-sm text-gray-400 hover:text-[#4ad481] transition-colors">
+                      <Link href={link.path} className="text-sm text-gray-400 hover:text-[#4ad481] transition-colors">
                         {link.name}
                       </Link>
                     </li>

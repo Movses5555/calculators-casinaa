@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Calculator, Heart, DollarSign, Percent, Dice1, Bitcoin, Target, Timer, Clock } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -249,6 +250,7 @@ const calculators: CalculatorItem[] = [
 ];
 
 const CalculatorDirectory = () => {
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState('');
   const [currentCategory, setCurrentCategory] = useState<CalculatorCategory>('all');
 
@@ -438,7 +440,7 @@ const CalculatorCard = ({ calculator, highlight, searchTerm = '' }: CalculatorCa
 
   return (
     <Link 
-      to={calculator.path} 
+      href={calculator.path} 
       className={cn(
         "block p-4 border rounded-lg transition-all hover:shadow-md bg-white",
         calculator.isPopular ? "border-blue-200 hover:border-blue-300" : "border-gray-200 hover:border-gray-300"

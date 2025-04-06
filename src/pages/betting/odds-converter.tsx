@@ -1,5 +1,5 @@
+"use client"
 
-import React from 'react';
 import Layout from '@/components/layout/Layout';
 import OddsConverter from '@/components/calculators/betting/OddsConverter';
 import CalculatorSEOContent from '@/components/seo/CalculatorSEOContent';

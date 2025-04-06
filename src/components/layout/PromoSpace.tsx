@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { ArrowRight, Gift, Sparkles } from "lucide-react";
 
 interface PromoSpaceProps {
@@ -34,7 +34,7 @@ const PromoSpace = ({
   };
 
   return (
-    <div className={`${bgClasses[variant]} ${textClasses[variant]} w-full py-6 px-6 relative`}>
+    <div className={`${bgClasses[variant]} ${textClasses[variant]} w-full py-6 px-6 relative overflow-hidden`}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
         <div className="flex items-center mb-4 md:mb-0">
           {/* Logo/brand section */}
@@ -69,7 +69,7 @@ const PromoSpace = ({
 
         {/* CTA Button */}
         <Link
-          to={linkUrl}
+          href={linkUrl}
           className="bg-[#4ad481] text-[#0F1923] font-bold px-6 py-3 rounded-lg transition-all duration-200 hover:bg-opacity-90 hover:shadow-md text-center"
         >
           {linkText}

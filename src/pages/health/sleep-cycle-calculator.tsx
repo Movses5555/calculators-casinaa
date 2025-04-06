@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Moon } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import SleepCycleCalculator from '@/components/calculators/health/SleepCycleCalculator';
@@ -9,7 +9,7 @@ import { calculatorColors } from '@/utils/calculatorColors';
 const SleepCycleCalculatorPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Sleep Cycle Calculator - Plan Better Sleep | CalcMaster</title>
         <meta 
           name="description" 
@@ -44,7 +44,7 @@ const SleepCycleCalculatorPage: React.FC = () => {
             }
           `}
         </script>
-      </Helmet>
+      </Head>
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto">

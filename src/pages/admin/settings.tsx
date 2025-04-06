@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import SitemapGenerator from '@/components/admin/SitemapGenerator';
 import SubnavLinksEditor from '@/components/admin/content/SubnavLinksEditor';
@@ -9,9 +9,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 const SettingsPage = () => {
   return (
     <div className="container mx-auto p-6">
-      <Helmet>
+      <Head>
         <title>Settings | CalcMaster Admin</title>
-      </Helmet>
+      </Head>
       
       <div className="mb-8">
         <h1 className="text-3xl font-bold">Settings</h1>

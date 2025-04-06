@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import Layout from '@/components/layout/Layout';
 import CaloriesBurnedCalculator from '@/components/calculators/health/CaloriesBurnedCalculator';
 import CaloriesBurnedPageHeader from '@/components/calculators/health/CaloriesBurnedPageHeader';
@@ -9,7 +9,7 @@ import CaloriesBurnedEducationalContent from '@/components/calculators/health/Ca
 const CaloriesBurnedCalculatorPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Calories Burned Calculator - Track Exercise Energy Expenditure | CalcMaster</title>
         <meta 
           name="description" 
@@ -44,7 +44,7 @@ const CaloriesBurnedCalculatorPage: React.FC = () => {
             }
           `}
         </script>
-      </Helmet>
+      </Head>
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto">

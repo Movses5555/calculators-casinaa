@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TrendingGamesEditor from "@/components/admin/content/TrendingGamesEditor";
 import BestCasinosEditor from "@/components/admin/content/BestCasinosEditor";
@@ -11,9 +11,9 @@ const ContentManagementPage = () => {
   
   return (
     <div className="container mx-auto p-6">
-      <Helmet>
+      <Head>
         <title>Content Management | CalcMaster Admin</title>
-      </Helmet>
+      </Head>
       
       <div className="mb-8">
         <h1 className="text-3xl font-bold">Content Management</h1>

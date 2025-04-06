@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import Layout from '@/components/layout/Layout';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Shield, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -19,12 +19,11 @@ const AdminLoginPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
   const { toast } = useToast();
   
   // Get the redirect path from location state or default to /admin/bug-tracker
-  const from = location.state?.from?.pathname || "/admin/bug-tracker";
+  const from = (router.query?.from as string) || "/admin/bug-tracker";
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,7 +39,7 @@ const AdminLoginPage: React.FC = () => {
           description: "Welcome to the admin panel.",
           variant: "default",
         });
-        navigate(from);
+        router.push(from);
       } else {
         toast({
           title: "Login failed",
@@ -54,10 +53,10 @@ const AdminLoginPage: React.FC = () => {
 
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Admin Login | CalcMaster</title>
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
 
       <div className="container max-w-md mx-auto py-16 px-4">
         <div className="text-center mb-8">

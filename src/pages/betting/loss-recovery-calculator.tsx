@@ -1,19 +1,19 @@
 
 import React from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import BettingLayout from "@/components/layout/BettingLayout";
 import PlaceholderCalculator from "@/components/calculators/betting/PlaceholderCalculator";
 
 const LossRecoveryCalculatorPage = () => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Loss Recovery Calculator | Money Metrics Mania</title>
         <meta 
           name="description" 
           content="Calculate how to recover from betting losses safely. Determine optimal recovery stakes without risking your entire bankroll."
         />
-      </Helmet>
+      </Head>
       <BettingLayout 
         title="Loss Recovery Calculator" 
         description="Calculate how to recover from betting losses in a sustainable way. Learn responsible recovery strategies without risking your entire bankroll."

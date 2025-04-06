@@ -20,6 +20,21 @@ const nextConfig = {
         destination: '/nextjs',
         permanent: false,
       },
+      {
+        source: '/chance/roll-a-dice',
+        destination: '/chance-games/roll-a-dice',
+        permanent: true,
+      },
+      {
+        source: '/chance/flip-a-coin',
+        destination: '/chance-games/flip-a-coin',
+        permanent: true,
+      },
+      {
+        source: '/chance/name-picker-wheel',
+        destination: '/chance-games/name-picker-wheel',
+        permanent: true,
+      },
     ];
   },
   // Environment variables for client-side access

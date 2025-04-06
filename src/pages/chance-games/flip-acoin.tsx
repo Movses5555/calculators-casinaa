@@ -3,17 +3,17 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ChanceGamesLayout from '@/components/layout/ChanceGamesLayout';
 import CoinFlipper from '@/components/chance-games/CoinFlipper';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { CircleDollarSign } from 'lucide-react';
 
 const FlipACoinPage = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Virtual Coin Flip | Online Heads or Tails</title>
         <meta name="description" content="Flip a virtual coin online to make quick decisions, settle debates, or just have fun with this digital version of the classic coin toss." />
         <meta name="keywords" content="coin flip, virtual coin, heads or tails, coin toss, online coin flip, random coin" />
-      </Helmet>
+      </Head>
     
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

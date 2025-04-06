@@ -3,17 +3,17 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ChanceGamesLayout from '@/components/layout/ChanceGamesLayout';
 import DiceShakerCup from '@/components/chance-games/DiceShakerCup';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Dice3 } from 'lucide-react';
 
 const DiceShakerCupPage = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Dice Shaker Cup | Online Random Dice Generator</title>
         <meta name="description" content="Shake virtual dice in our digital dice cup. Perfect for board games, RPGs, and games needing random numbers. Shake multiple dice at once!" />
         <meta name="keywords" content="dice cup, dice shaker, random dice, virtual dice cup, online dice, dice generator" />
-      </Helmet>
+      </Head>
       
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

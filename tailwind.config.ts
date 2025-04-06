@@ -8,6 +8,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./styles/**/*.css",
 	],
 	prefix: "",
 	theme: {
@@ -132,7 +133,7 @@ export default {
 				},
 				'fade-out': {
 					'0%': { opacity: '1' },
-					'100%': { opacity: '0' }
+					'100%': { opacity: '1' }
 				},
 				'slide-in': {
 					'0%': { transform: 'translateX(-100%)' },

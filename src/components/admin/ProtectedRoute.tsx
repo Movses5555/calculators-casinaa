@@ -1,23 +1,35 @@
-
-import React, { useEffect } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const location = useLocation();
-  const isAuthenticated = localStorage.getItem('adminAuthenticated') === 'true';
+  const router = useRouter();
+  
+  // Check authentication (with SSR safety check)
+  const isAuthenticated = typeof window !== 'undefined' 
+    ? localStorage.getItem('adminAuthenticated') === 'true'
+    : false;
 
-  // Check if token is expired (in a real app you might use JWT expiration)
   useEffect(() => {
-    // This could check token expiration, validate with backend, etc.
-  }, []);
+    // Only run on client side after component mounts
+    if (!isAuthenticated) {
+      // Preserve the full attempted path including query params
+      const returnUrl = router.asPath;
+      
+      // Redirect to login with return URL in query params
+      router.push({
+        pathname: '/admin/login',
+        query: { returnUrl }, // Using query params instead of state
+      });
+    }
+  }, [isAuthenticated, router]);
 
-  if (!isAuthenticated) {
-    // Redirect to the login page, but save the location they were trying to go to
-    return <Navigate to="/admin/login" state={{ from: location }} replace />;
+  // Render nothing during initial render or if not authenticated
+  if (typeof window === 'undefined' || !isAuthenticated) {
+    return null;
   }
 
   return <>{children}</>;

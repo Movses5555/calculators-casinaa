@@ -1,19 +1,19 @@
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import DiscountPercentageFinder from '@/components/calculators/math/DiscountPercentageFinder';
 import { Percent } from 'lucide-react';
 
 const DiscountPercentageFinderPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Discount Percentage Finder | Calculate Sale Savings</title>
         <meta name="description" content="Find the discount percentage from original and sale prices. Calculate how much you save with our discount calculator." />
         <meta name="keywords" content="discount calculator, sale price, discount percentage, savings calculator, price reduction" />
         <link rel="canonical" href="/math/discount-percentage-finder" />
-      </Helmet>
+      </Head>
 
       <div className="container max-w-6xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

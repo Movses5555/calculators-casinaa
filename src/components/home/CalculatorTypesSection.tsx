@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -114,7 +114,7 @@ const CalculatorTypesSection = () => {
                   {category.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
                       <Link 
-                        to={link.path} 
+                        href={link.path} 
                         className="flex items-center justify-between p-2.5 rounded-lg hover:bg-[#1e2630] group/link transition-all duration-200"
                         aria-label={`Go to ${link.name} calculator`}
                       >

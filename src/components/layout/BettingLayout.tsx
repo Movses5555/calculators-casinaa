@@ -1,7 +1,7 @@
 
 import React from "react";
 import Layout from "./Layout";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 interface BettingLayoutProps {
   children: React.ReactNode;
@@ -18,10 +18,10 @@ const BettingLayout: React.FC<BettingLayoutProps> = ({
 }) => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>{title} | Money Metrics Mania</title>
         <meta name="description" content={description} />
-      </Helmet>
+      </Head>
       
       <div className="container max-w-6xl mx-auto py-8 px-4">
         <header className="mb-8 text-center">

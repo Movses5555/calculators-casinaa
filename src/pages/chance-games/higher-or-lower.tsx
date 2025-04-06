@@ -3,17 +3,17 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ChanceGamesLayout from '@/components/layout/ChanceGamesLayout';
 import HigherOrLower from '@/components/chance-games/HigherOrLower';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { ArrowUpDown } from 'lucide-react';
 
 const HigherOrLowerPage = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Higher or Lower Game | Test Your Card Prediction Skills</title>
         <meta name="description" content="Test your intuition with our Higher or Lower card game - guess if the next card will be higher or lower than the current one." />
         <meta name="keywords" content="higher or lower, card game, prediction game, higher lower, probability game, online card game" />
-      </Helmet>
+      </Head>
     
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

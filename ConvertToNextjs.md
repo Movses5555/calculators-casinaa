@@ -436,11 +436,11 @@ Replace React Helmet with Next.js Head component:
 
 ```tsx
 // Before
-import { Helmet } from 'react-helmet';
-<Helmet>
+import Head from "next/head";
+<Head>
   <title>Mortgage Calculator | Money Metrics Mania</title>
   <meta name="description" content="Calculate your mortgage payments." />
-</Helmet>
+</Head>
 
 // After
 import Head from 'next/head';

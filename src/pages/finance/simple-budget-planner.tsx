@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Wallet } from 'lucide-react';
 import { calculatorColors } from '@/utils/calculatorColors';
 import SimpleBudgetPlanner from '@/components/calculators/finance/SimpleBudgetPlanner';
@@ -9,12 +9,12 @@ import SimpleBudgetPlanner from '@/components/calculators/finance/SimpleBudgetPl
 const SimpleBudgetPlannerPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Simple Budget Planner | Easy Financial Planning</title>
         <meta name="description" content="Create a simple budget plan to manage your finances effectively. Track income, expenses, and savings with our easy-to-use budget planner." />
         <meta name="keywords" content="budget planner, simple budget, financial planning, expense tracker, personal finance" />
         <link rel="canonical" href="/finance/simple-budget-planner" />
-      </Helmet>
+      </Head>
 
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

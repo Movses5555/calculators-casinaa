@@ -1,13 +1,15 @@
+'use client'
 
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Search } from "lucide-react";
-import { Helmet } from "react-helmet";
-import Layout from "../components/layout/Layout";
-import PopularGamesSection from "../components/home/PopularGamesSection";
-import CalculatorTypesSection from "../components/home/CalculatorTypesSection";
-import BestCasinosSection from "../components/home/BestCasinosSection";
-import PopularCalculatorsSection from "../components/home/PopularCalculatorsSection";
+import Head from "next/head";
+import Layout from "@/components/layout/Layout";
+import PopularGamesSection from "@/components/home/PopularGamesSection";
+import CalculatorTypesSection from "@/components/home/CalculatorTypesSection";
+import BestCasinosSection from "@/components/home/BestCasinosSection";
+import PopularCalculatorsSection from "@/components/home/PopularCalculatorsSection";
 
 // Get all calculators from all categories for search functionality
 const allCalculators = (() => {
@@ -150,7 +152,7 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const filteredCalculators = searchTerm.length > 1 
     ? allCalculators.filter(calc => 
@@ -159,7 +161,7 @@ const Index = () => {
     : [];
 
   const handleSearchClick = (path: string) => {
-    navigate(path);
+    router.push(path);
     setSearchTerm("");
     setShowSearchResults(false);
   };
@@ -180,7 +182,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Money Metrics Mania - Calculator Tools for Everyone</title>
         <meta name="description" content="From basic math to complex financial calculations, we have the tools you need to make informed decisions and solve problems quickly." />
         <meta name="keywords" content="calculators, financial calculators, mortgage calculator, math tools, online calculators" />
@@ -189,7 +191,7 @@ const Index = () => {
         <meta property="og:description" content="Powerful calculator tools for finance, math, statistics, measurements and more." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/" />
-      </Helmet>
+      </Head>
       
       {/* Hero Section */}
       <section className="py-10 md:py-16">

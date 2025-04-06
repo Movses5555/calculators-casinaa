@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Separator } from "@/components/ui/separator";
@@ -167,7 +167,7 @@ const Sidenav = ({ isOpen, onClose }: SidenavProps) => {
   return (
     <div className="flex flex-col h-full overflow-y-auto bg-[#1E2630] text-gray-200">
       <div className="flex items-center justify-between p-4 border-b border-[#2a3642]">
-        <Link to="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
+        <Link href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
           <span className="text-2xl">🧮</span>
           <span className="text-lg font-semibold text-gray-100">CalcMaster</span>
         </Link>
@@ -200,7 +200,7 @@ const Sidenav = ({ isOpen, onClose }: SidenavProps) => {
                       {category.links.map((link) => (
                         <Link
                           key={link.path}
-                          to={link.path}
+                          href={link.path}
                           className="block px-3 py-2 text-sm text-gray-400 rounded-md hover:bg-[#2a3642] hover:text-[#4ad481] transition-colors duration-200"
                           onClick={handleLinkClick}
                         >

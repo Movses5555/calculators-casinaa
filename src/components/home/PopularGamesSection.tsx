@@ -1,5 +1,5 @@
+'use client'
 
-import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 

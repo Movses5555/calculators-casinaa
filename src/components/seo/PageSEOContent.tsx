@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 
 interface PageSEOContentProps {
   title: string;
@@ -64,7 +64,7 @@ const PageSEOContent: React.FC<PageSEOContentProps> = ({
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
@@ -81,7 +81,7 @@ const PageSEOContent: React.FC<PageSEOContentProps> = ({
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>
-      </Helmet>
+      </Head>
       <div id={`content-${pageIdentifier}`}>
         {children}
       </div>

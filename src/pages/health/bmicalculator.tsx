@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Heart } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import BMICalculator from '@/components/calculators/health/BMICalculator';
@@ -9,7 +9,7 @@ import { calculatorColors } from '@/utils/calculatorColors';
 const BMICalculatorPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>BMI Calculator - Easy Body Mass Index Tool | CalcMaster</title>
         <meta 
           name="description" 
@@ -44,7 +44,7 @@ const BMICalculatorPage: React.FC = () => {
             }
           `}
         </script>
-      </Helmet>
+      </Head>
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto">

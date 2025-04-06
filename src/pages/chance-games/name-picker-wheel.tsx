@@ -3,17 +3,17 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ChanceGamesLayout from '@/components/layout/ChanceGamesLayout';
 import NamePickerWheel from '@/components/chance-games/NamePickerWheel';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Circle } from 'lucide-react';
 
 const NamePickerWheelPage = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Random Name Picker Wheel | Fair Random Selection Tool</title>
         <meta name="description" content="Use our Random Name Picker Wheel for fair selection and decision making. Great for classrooms, contests, and team selection, with custom color options." />
         <meta name="keywords" content="name picker, random wheel, spin wheel, name selector, random picker, decision wheel, random choice" />
-      </Helmet>
+      </Head>
     
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

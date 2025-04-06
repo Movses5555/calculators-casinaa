@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useRouter } from "next/router";
 import { 
   LayoutDashboard, 
   Bug, 
@@ -26,13 +26,13 @@ import {
 import { Button } from "@/components/ui/button";
 import AdminTopNav from "./AdminTopNav";
 
-const AdminDashboard = () => {
-  const navigate = useNavigate();
+const AdminDashboard = ({ children }) => {
+  const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
 
   const handleLogout = () => {
     // Implement logout functionality
-    navigate("/admin/login");
+    router.push("/admin/login");
   };
 
   return (
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton 
-                  onClick={() => navigate("/admin/dashboard")}
+                  onClick={() => router.push("/admin/dashboard")}
                   tooltip="Dashboard"
                 >
                   <LayoutDashboard className="w-5 h-5" />
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
               
               <SidebarMenuItem>
                 <SidebarMenuButton 
-                  onClick={() => navigate("/admin/bug-tracker")}
+                  onClick={() => router.push("/admin/bug-tracker")}
                   tooltip="Bug Tracker"
                 >
                   <Bug className="w-5 h-5" />
@@ -72,7 +72,7 @@ const AdminDashboard = () => {
               
               <SidebarMenuItem>
                 <SidebarMenuButton 
-                  onClick={() => navigate("/admin/feature-tools")}
+                  onClick={() => router.push("/admin/feature-tools")}
                   tooltip="Feature Tools"
                 >
                   <SlidersHorizontal className="w-5 h-5" />
@@ -82,7 +82,7 @@ const AdminDashboard = () => {
               
               <SidebarMenuItem>
                 <SidebarMenuButton 
-                  onClick={() => navigate("/admin/sponsored-listings")}
+                  onClick={() => router.push("/admin/sponsored-listings")}
                   tooltip="Sponsored Listings"
                 >
                   <Tag className="w-5 h-5" />
@@ -92,7 +92,7 @@ const AdminDashboard = () => {
               
               <SidebarMenuItem>
                 <SidebarMenuButton 
-                  onClick={() => navigate("/admin/promo-spaces")}
+                  onClick={() => router.push("/admin/promo-spaces")}
                   tooltip="Promo Spaces"
                 >
                   <Package className="w-5 h-5" />
@@ -102,7 +102,7 @@ const AdminDashboard = () => {
               
               <SidebarMenuItem>
                 <SidebarMenuButton 
-                  onClick={() => navigate("/admin/content-management")}
+                  onClick={() => router.push("/admin/content-management")}
                   tooltip="Content Management"
                 >
                   <Edit className="w-5 h-5" />
@@ -114,7 +114,7 @@ const AdminDashboard = () => {
               
               <SidebarMenuItem>
                 <SidebarMenuButton 
-                  onClick={() => navigate("/admin/settings")}
+                  onClick={() => router.push("/admin/settings")}
                   tooltip="Settings"
                 >
                   <Settings className="w-5 h-5" />
@@ -139,7 +139,7 @@ const AdminDashboard = () => {
         <div className="flex flex-col flex-1">
           <AdminTopNav />
           <main className="flex-1 p-6 overflow-auto">
-            <Outlet />
+            {children}
           </main>
         </div>
       </div>

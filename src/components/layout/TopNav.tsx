@@ -1,6 +1,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from 'next/link';
 import { Menu, X, Calculator, ChevronDown, Search } from "lucide-react";
 import { useSidebar } from "@/components/ui/sidebar";
 
@@ -208,7 +209,7 @@ const TopNav = ({ toggleSidenav }: { toggleSidenav: () => void }) => {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const { toggleSidebar } = useSidebar();
   const searchRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -225,7 +226,7 @@ const TopNav = ({ toggleSidenav }: { toggleSidenav: () => void }) => {
     : [];
 
   const handleSearchClick = (path: string) => {
-    navigate(path);
+    router.push(path);
     setSearchTerm("");
     setShowSearchResults(false);
   };
@@ -257,7 +258,7 @@ const TopNav = ({ toggleSidenav }: { toggleSidenav: () => void }) => {
               <Menu size={24} />
             </button>
             
-            <Link to="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <img 
                 src="/lovable-uploads/d8aa8a83-a1f8-4057-a349-95f93706b281.png" 
                 alt="CalcMaster Logo" 
@@ -285,7 +286,7 @@ const TopNav = ({ toggleSidenav }: { toggleSidenav: () => void }) => {
                         {link.subLinks.map((subLink) => (
                           <Link
                             key={subLink.name}
-                            to={subLink.path}
+                            href={subLink.path}
                             className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#394756] hover:text-[#4ad481] rounded-md transition-colors duration-150"
                             onClick={() => setOpenDropdown(null)}
                           >
@@ -297,7 +298,7 @@ const TopNav = ({ toggleSidenav }: { toggleSidenav: () => void }) => {
                   </div>
                 ) : (
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="px-3 py-2 rounded-md text-gray-300 hover:text-[#4ad481] hover:bg-[#2a3642] transition-colors duration-200"
                   >
                     <span className="mr-2">{link.emoji}</span>
@@ -388,7 +389,7 @@ const TopNav = ({ toggleSidenav }: { toggleSidenav: () => void }) => {
                         {link.subLinks.map((subLink) => (
                           <Link
                             key={subLink.name}
-                            to={subLink.path}
+                            href={subLink.path}
                             className="block px-3 py-2 rounded-md text-sm text-gray-400 hover:text-[#4ad481] hover:bg-[#2a3642] transition-colors duration-200"
                             onClick={toggleMobileMenu}
                           >
@@ -400,7 +401,7 @@ const TopNav = ({ toggleSidenav }: { toggleSidenav: () => void }) => {
                   </div>
                 ) : (
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="block px-3 py-2 rounded-md text-gray-300 hover:text-[#4ad481] hover:bg-[#2a3642] transition-colors duration-200"
                     onClick={toggleMobileMenu}
                   >

@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from 'next/link';
 import { Dice1, CreditCard, Gift, BookOpen, Star, Trophy, ExternalLink } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 
@@ -48,7 +49,7 @@ const fetchNavLinks = (): SubnavLink[] => {
 };
 
 const Subnav = () => {
-  const location = useLocation();
+  const router = useRouter();
   
   // Use React Query to fetch navigation links with caching
   const { data: navLinks = defaultNavLinks } = useQuery({
@@ -73,7 +74,7 @@ const Subnav = () => {
             <LinkItem 
               key={link.id} 
               link={link}
-              isActive={location.pathname === link.path} 
+              isActive={router.pathname === link.path} 
             />
           ))}
         </div>
@@ -113,7 +114,7 @@ const LinkItem = ({
   // For internal links
   return (
     <Link 
-      to={link.path}
+      href={link.path}
       className={`nav-link flex items-center gap-1 whitespace-nowrap font-medium ${
         isActive ? 'text-[#4ad481]' : 'text-gray-300 hover:text-[#4ad481]'
       } transition-colors`}

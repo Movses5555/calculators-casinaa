@@ -3,17 +3,17 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ChanceGamesLayout from '@/components/layout/ChanceGamesLayout';
 import PopupDice from '@/components/chance-games/PopupDice';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Dices } from 'lucide-react';
 
 const PopUpDicePage = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Popup Dice | Interactive 3D Dice Simulator</title>
         <meta name="description" content="Experience our interactive Popup Dice simulator with realistic 3D animations. Watch dice pop up across your screen with random results for games and decisions." />
         <meta name="keywords" content="popup dice, 3D dice, dice animation, virtual dice, interactive dice, random dice" />
-      </Helmet>
+      </Head>
     
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

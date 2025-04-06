@@ -12,13 +12,20 @@
   }
 }
 
+@layer utilities {
+  .animation-fill-forwards {
+    animation-fill-mode: forwards;
+  }
+}
+
 @layer components {
   .fade-transition {
     @apply transition-opacity duration-300 ease-in-out;
   }
   
   .animate-fade-in {
-    @apply opacity-0 animate-in fade-in duration-500 fill-mode-forwards;
+    @apply opacity-0 animate-in fade-in duration-500;
+    animation-fill-mode: forwards;
   }
   
   .scrollbar-hidden {

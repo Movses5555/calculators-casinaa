@@ -1,18 +1,18 @@
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import NumberBaseConverter from '@/components/calculators/math/NumberBaseConverter';
 
 const NumberBaseConverterPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Number Base Converter | Binary, Decimal, Hex Conversion</title>
         <meta name="description" content="Convert numbers between different bases including binary, decimal, octal, and hexadecimal with our number base converter." />
         <meta name="keywords" content="base converter, binary converter, decimal to binary, hexadecimal, number conversion" />
         <link rel="canonical" href="/math/number-base-converter" />
-      </Helmet>
+      </Head>
 
       <div className="container max-w-6xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

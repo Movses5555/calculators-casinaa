@@ -1,6 +1,7 @@
+'use client';
 
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
 import TopNav from "./TopNav";
 import Subnav from "./Subnav";
 import Sidenav from "./Sidenav";
@@ -22,16 +23,16 @@ const Layout = ({
   showSideBanner = true,
 }: LayoutProps) => {
   const [sidenavOpen, setSidenavOpen] = useState(false);
-  const location = useLocation();
+  const router = useRouter();
   const isMobile = useIsMobile();
   
   // Check if current route is homepage
-  const isHomepage = location.pathname === '/';
+  const isHomepage = router.pathname === '/';
 
   // Close sidenav when route changes
   useEffect(() => {
     setSidenavOpen(false);
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   const toggleSidenav = () => {
     setSidenavOpen(!sidenavOpen);
@@ -64,7 +65,7 @@ const Layout = ({
           {/* Main content area - takes entire middle section */}
           <div className="flex-1 flex justify-center">
             <main className="w-full max-w-7xl px-4 sm:px-6 pb-12 transition-all duration-300 bg-white">
-              <div className="animate-fade-in">{children}</div>
+              <div className="animate-fade animate-in fade-in duration-1000 animate-fill-forwards">{children}</div>
             </main>
           </div>
 

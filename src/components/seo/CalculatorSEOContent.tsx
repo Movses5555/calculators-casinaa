@@ -1,6 +1,6 @@
+'use client'
 
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 
 interface CalculatorSEOContentProps {
   title: string;
@@ -26,7 +26,7 @@ const CalculatorSEOContent: React.FC<CalculatorSEOContentProps> = ({
   
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
@@ -47,7 +47,7 @@ const CalculatorSEOContent: React.FC<CalculatorSEOContentProps> = ({
         
         {/* Canonical URL */}
         <link rel="canonical" href={`https://calcmaster.app/${pageIdentifier}`} />
-      </Helmet>
+      </Head>
       
       {/* Main calculator content */}
       {children}

@@ -1,18 +1,18 @@
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import PaceCalculator from '@/components/calculators/math/PaceCalculator';
 
 const PaceCalculatorPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Pace Calculator | Running & Walking Pace</title>
         <meta name="description" content="Calculate your running or walking pace with our pace calculator. Find your pace per mile or kilometer and plan your exercise routine." />
         <meta name="keywords" content="pace calculator, running pace, walking pace, race pace, marathon calculator" />
         <link rel="canonical" href="/math/pace-calculator" />
-      </Helmet>
+      </Head>
 
       <div className="container max-w-6xl mx-auto px-4 py-8">
         <header className="mb-8 text-center">

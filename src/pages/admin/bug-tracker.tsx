@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/router";
 import Layout from '@/components/layout/Layout';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import { Bug, AlertTriangle, CheckCircle, Clock, LogOut } from 'lucide-react';
 import { 
   getAllBugs, 
@@ -19,7 +19,7 @@ import { useToast } from '@/components/ui/use-toast';
 const BugTrackerPage: React.FC = () => {
   const [bugs, setBugs] = useState<BugItem[]>(getAllBugs());
   const [activeTab, setActiveTab] = useState<string>('all');
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
 
   const handleTabChange = (value: string) => {
@@ -40,7 +40,7 @@ const BugTrackerPage: React.FC = () => {
       title: "Logged out",
       description: "You have been successfully logged out of the admin panel.",
     });
-    navigate('/');
+    router.push('/');
   };
 
   const getPriorityColor = (priority: string) => {
@@ -65,11 +65,11 @@ const BugTrackerPage: React.FC = () => {
 
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Bug Tracker | CalcMaster Admin</title>
         <meta name="description" content="Internal bug tracking system for CalcMaster" />
         <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      </Head>
 
       <div className="container max-w-6xl mx-auto py-8 px-4">
         <header className="mb-8">

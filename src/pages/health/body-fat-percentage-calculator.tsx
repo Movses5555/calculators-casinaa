@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 import Layout from '@/components/layout/Layout';
 import BodyFatPercentageCalculator from '@/components/calculators/health/BodyFatPercentageCalculator';
 import BodyFatPercentagePageHeader from '@/components/calculators/health/BodyFatPercentagePageHeader';
@@ -9,7 +9,7 @@ import BodyFatPercentageEducationalContent from '@/components/calculators/health
 const BodyFatPercentageCalculatorPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Body Fat Percentage Calculator - Measure Body Composition | CalcMaster</title>
         <meta 
           name="description" 
@@ -44,7 +44,7 @@ const BodyFatPercentageCalculatorPage: React.FC = () => {
             }
           `}
         </script>
-      </Helmet>
+      </Head>
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto">

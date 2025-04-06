@@ -3,12 +3,12 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import SavingsGoalTrackerHeader from '@/components/calculators/finance/SavingsGoalTrackerHeader';
 import SavingsGoalTracker from '@/components/calculators/finance/SavingsGoalTracker';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
 
 const SavingsGoalTrackerPage: React.FC = () => {
   return (
     <Layout>
-      <Helmet>
+      <Head>
         <title>Savings Goal Calculator | Track Your Financial Goals</title>
         <meta name="description" content="Plan your savings and track progress towards your financial goals with our savings goal calculator. See how long it takes to reach your target." />
         <meta name="keywords" content="savings calculator, savings goal, financial planning, savings tracker, investment calculator" />
@@ -37,7 +37,7 @@ const SavingsGoalTrackerPage: React.FC = () => {
             }
           `}
         </script>
-      </Helmet>
+      </Head>
 
       <div className="container max-w-6xl mx-auto px-4 py-8">
         <SavingsGoalTrackerHeader />

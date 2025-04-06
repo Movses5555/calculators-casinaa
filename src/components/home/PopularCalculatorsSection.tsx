@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { ArrowRight, Calculator, Percent, DollarSign, BarChart3, Home, Heart, Clock, Divide } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -90,7 +90,7 @@ const PopularCalculatorsSection = () => {
           <p className="text-gray-600">Fast and accurate tools for your everyday needs</p>
         </div>
         <Link 
-          to="/calculators" 
+          href="/calculators" 
           className="text-blue-600 hover:text-blue-800 flex items-center"
         >
           <span>View all</span>
@@ -99,7 +99,7 @@ const PopularCalculatorsSection = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {calculatorItems.map((item, index) => (
-          <Link key={index} to={item.path}>
+          <Link key={index} href={item.path}>
             <CalculatorItem item={item} />
           </Link>
         ))}
