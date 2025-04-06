@@ -38,7 +38,7 @@ const CryptoStakingCalculator = () => {
 
   // Calculate staking rewards
   const calculateRewards = () => {
-    let data: StakingReward[] = [];
+    const data: StakingReward[] = [];
     let totalStaked = initialInvestment;
     let cumulativeReward = 0;
     

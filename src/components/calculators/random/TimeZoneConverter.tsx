@@ -245,7 +245,7 @@ const TimeZoneConverter = () => {
     
     // If removing home, set the first remaining location as home
     const removingHome = locations.find(loc => loc.id === id)?.isHome;
-    let newLocations = locations.filter(loc => loc.id !== id);
+    const newLocations = locations.filter(loc => loc.id !== id);
     
     if (removingHome && newLocations.length > 0) {
       newLocations[0].isHome = true;

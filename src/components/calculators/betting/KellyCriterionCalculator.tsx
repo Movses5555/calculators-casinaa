@@ -36,12 +36,12 @@ const KellyCriterionCalculator: React.FC = () => {
           ? 1 + (oddsValue / 100) 
           : 1 + (100 / Math.abs(oddsValue));
         
-      case "fractional":
+      case "fractional": {
         if (!odds.includes('/')) return 0;
         const [numerator, denominator] = odds.split('/').map(Number);
         if (isNaN(numerator) || isNaN(denominator) || denominator === 0) return 0;
         return 1 + (numerator / denominator);
-        
+      }
       default:
         return 0;
     }

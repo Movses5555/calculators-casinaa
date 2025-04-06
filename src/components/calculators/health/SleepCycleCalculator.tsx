@@ -29,7 +29,7 @@ const SleepCycleCalculator = () => {
   
   const handleTimeChange = (type: 'hour' | 'minute' | 'ampm', value: string, timeType: 'wakeup' | 'bedtime') => {
     const currentDate = timeType === 'wakeup' ? wakeupTime : bedTime;
-    let newDate = new Date(currentDate);
+    const newDate = new Date(currentDate);
     
     if (type === 'hour') {
       let hourValue = parseInt(value);

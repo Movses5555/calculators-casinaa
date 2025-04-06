@@ -125,7 +125,7 @@ export function calculateDebtSnowball(
   
   // Simulate month-by-month payments
   let month = 0;
-  let currentDate = new Date();
+  const currentDate = new Date();
   let activeDebts = workingDebts.length;
   let totalPaid = 0;
   
