@@ -1,19 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React Strict Mode for development to catch potential issues
+  output: 'export',
+  trailingSlash: true,
   reactStrictMode: true,
   distDir: '.next',
-
-  // Enable SWC-based minification for better performance
   swcMinify: true,
 
-  // Configure image domains for Next.js image optimization
   images: {
+    unoptimized: true,
     domains: ['cdn.gpteng.co', 'lovable-uploads.s3.amazonaws.com'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**', // Allow any hostname for remote images
+        hostname: '**',
       },
     ],
   },
