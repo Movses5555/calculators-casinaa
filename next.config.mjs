@@ -3,6 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
   images: {
     domains: ['cdn.gpteng.co', 'lovable-uploads.s3.amazonaws.com'],
     remotePatterns: [

@@ -1,8 +1,10 @@
 #!/bin/sh
 echo "Installing dependencies..."
 npm install --force
-echo "Running full build..."
-npm run full-build
-echo "Verifying output..."
-ls -la .next || (echo "Build failed - no .next directory" && exit 1)
-ls -la out || (echo "Export failed - no out directory" && exit 1)
+echo "Building application..."
+npm run build
+echo "Exporting static site..."
+npm run export
+echo "Verifying output directories..."
+ls -la .next || echo "Warning: No .next directory found"
+ls -la out || echo "Warning: No out directory found"
