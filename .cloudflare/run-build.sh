@@ -1,7 +1,7 @@
-cat > .cloudflare/run-build.sh << 'EOL'
 #!/bin/sh
-echo "Forcing npm installation..."
+echo "Installing dependencies..."
 npm install
-echo "Running build..."
+echo "Building application..."
 npm run build
-EOL
+echo "Verifying build output..."
+ls -la .next
