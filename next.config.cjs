@@ -2,6 +2,7 @@
 const nextConfig = {
   // Enable React Strict Mode for development to catch potential issues
   reactStrictMode: true,
+  distDir: '.next',
 
   // Enable SWC-based minification for better performance
   swcMinify: true,
